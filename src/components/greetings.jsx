@@ -1,15 +1,19 @@
-export function Greetings(props){
+import { Card } from "./card"
+
+export function Greetings({
+  user:{
+    firstName,
+    lastName,
+  }
+}){
   function formatName(){
-    return `${props.lastName} ${props.firstName}`
+    return `${lastName} ${firstName}`
   }
 
+
   return (
-    <div>
-        <p>
-         {
-          formatName()
-         }
-        </p>
-    </div>
+    <Card>
+        <p>{ formatName() }</p>
+    </Card>
   )
 }
